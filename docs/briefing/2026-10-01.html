@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-10-01 비즈니스 브리핑</title>
+<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="back-link" href="../index.html">← 홈으로</a>
+    <a class="back-link" href="../saved.html" style="margin-left:12px;">⭐ 저장한 기사</a>
+  </div>
+  <div class="briefing-header">
+    <div class="date-eyebrow" style="color:var(--ink-soft);font-size:13px;">TODAY BRIEFING</div>
+    <div class="briefing-date">2026년 10월 1일 (목)</div>
+    <div class="window-note">최근 48시간 이내 발행된 기사만 모았어요</div>
+  </div>
+  <div class="pill-row" id="tab-row">
+    
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+  
+    
+  
+    
+  
+    
+  
+  <footer class="site-footer">
+    관심기업·브랜드·업계 뉴스 자동 브리핑 · 매일 자동 생성<br>
+    규칙 기반 요약 (AI 사용 안 함) · 최근 48시간 이내 발행 기사만 수록
+  </footer>
+</div>
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.tab-btn');
+  var panels = document.querySelectorAll('.tab-panel');
+  function activate(targetId) {
+    panels.forEach(function (p) { p.style.display = (p.id === targetId) ? '' : 'none'; });
+    buttons.forEach(function (b) { b.classList.toggle('is-active', b.dataset.target === targetId); });
+  }
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () { activate(btn.dataset.target); });
+  });
+  if (buttons.length) { activate(buttons[0].dataset.target); }
+})();
+</script>
+<script src="../static/saved.js"></script>
+</body>
+</html>
